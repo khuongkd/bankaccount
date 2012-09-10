@@ -42,14 +42,18 @@
 
  <target name="phpab" description="Generate autoloader scripts">
   <exec executable="phpab">
-   <arg value="--trusting" />
    <arg value="--output" />
-   <arg path="${basedir}/src/autoload.php" />
-   <arg path="${basedir}/src" />
+   <arg path="${basedir}/src/application/autoload.php" />
+   <arg path="${basedir}/src/application" />
   </exec>
 
   <exec executable="phpab">
-   <arg value="--trusting" />
+   <arg value="--output" />
+   <arg path="${basedir}/src/framework/autoload.php" />
+   <arg path="${basedir}/src/framework" />
+  </exec>
+
+  <exec executable="phpab">
    <arg value="--output" />
    <arg path="${basedir}/tests/autoload.php" />
    <arg path="${basedir}/tests" />
@@ -58,7 +62,6 @@
 
  <target name="phar" description="Generate PHP Archive (PHAR)">
   <exec executable="phpab">
-   <arg value="--trusting" />
    <arg value="--phar" />
    <arg value="--output" />
    <arg path="${basedir}/build/bankaccount.phar" />

@@ -1,7 +1,7 @@
 <?php
 namespace bankaccount\framework;
 
-class HashMap
+trait HashMap
 {
     protected $values = array();
 
@@ -13,7 +13,9 @@ class HashMap
     public function get($key)
     {
         if (!isset($this->values[$key])) {
-            throw new \OutOfBoundsException;
+            throw new \OutOfBoundsException(
+              sprintf('Key "%s" does not exist', $key)
+            );
         }
 
         return $this->values[$key];

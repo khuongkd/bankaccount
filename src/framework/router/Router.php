@@ -4,11 +4,13 @@ namespace bankaccount\framework\router;
 use bankaccount\framework\http\Request;
 use bankaccount\framework\HashMap;
 
-class Router extends HashMap
+class Router
 {
+    use HashMap;
+
     public function route(Request $request)
     {
-        $parts = explode('/', $request->getServer('REQUEST_URI'));
+        $parts = explode('/', $request->getURI());
         unset($parts[0]);
 
         $controller = array_shift($parts);

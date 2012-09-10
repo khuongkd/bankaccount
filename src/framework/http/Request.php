@@ -3,38 +3,19 @@ namespace bankaccount\framework\http;
 
 use bankaccount\framework\HashMap;
 
-class Request extends HashMap
+class Request
 {
-    protected $data;
+    use HashMap;
 
-    public function __construct(array $server = array(),
-                                array $get    = array(),
-                                array $post   = array(),
-                                array $cookie = array(),
-                                array $files  = array(),
-                                array $env    = array())
+    protected $uri;
+
+    public function __construct($uri)
     {
-        $this->data['Server'] = $server;
-        $this->data['Get']    = $get;
-        $this->data['Post']   = $post;
-        $this->data['Cookie'] = $cookie;
-        $this->data['Files']  = $files;
-        $this->data['Env']    = $env;
+        $this->uri = $uri;
     }
 
-    public function __call($type, array $arguments)
+    public function getURI()
     {
-        $type = substr($type, 3);
-
-        if (!isset($this->data[$type])) {
-            throw new \BadMethodCallException;
-        }
-
-        if (empty($arguments) ||
-            !isset($this->data[$type][$arguments[0]])) {
-            throw new \InvalidArgumentException;
-        }
-
-        return $this->data[$type][$arguments[0]];
+        return $this->uri;
     }
 }

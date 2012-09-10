@@ -8,8 +8,11 @@
          timeoutForSmallTests="5">
   <testsuites>
     <testsuite name="BankAccount">
-      <directory suffix="Test.php">tests/unit</directory>
-      <!--<directory suffix="Test.php">tests/system</directory>-->
+      <directory suffix="Test.php">tests/framework</directory>
+      <directory suffix="Test.php">tests/application/unit</directory>
+      <directory suffix="Test.php">tests/application/database</directory>
+      <directory suffix="Test.php">tests/application/edge-to-edge</directory>
+      <!--<directory suffix="Test.php">tests/application/end-to-end</directory>-->
     </testsuite>
   </testsuites>
 
@@ -25,7 +28,11 @@
     <whitelist addUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">src</directory>
       <exclude>
-        <file>src/autoload.php</file>
+        <directory>src/application/testing</directory>
+        <directory>src/framework/testing</directory>
+        <file>src/application/autoload.php</file>
+        <file>src/application/bootstrap.php</file>
+        <file>src/framework/autoload.php</file>
       </exclude>
     </whitelist>
   </filter>
