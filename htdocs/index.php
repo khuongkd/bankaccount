@@ -6,11 +6,6 @@ use bankaccount\Application;
 use bankaccount\Factory;
 use bankaccount\framework\http\Request;
 
-// Set some super-global variables for demo purposes.
-if (PHP_SAPI == 'cli') {
-    $_SERVER['REQUEST_URI'] = '/bankaccount/id/1';
-}
-
 $application = new Application(
   new Request($_SERVER['REQUEST_URI']),
   new Factory(
