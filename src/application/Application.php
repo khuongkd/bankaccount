@@ -4,6 +4,7 @@ namespace bankaccount;
 use bankaccount\framework\factory\FactoryInterface;
 use bankaccount\framework\http\Request;
 use bankaccount\framework\FrontController;
+use bankaccount\framework\view\Result;
 
 class Application
 {
@@ -33,7 +34,17 @@ class Application
 
     public function run()
     {
-        $this->result = $this->frontController->dispatch();
+        try {
+            $this->result = $this->frontController->dispatch();
+        }
+
+        catch (\bankaccount\framework\exception\Exception $e) {
+            $this->result = new Result(
+              array('HTTP/1.1 500 Internal Server Error'),
+              'An error has occured.'
+            );
+        }
+
         $this->result->render();
     }
 
