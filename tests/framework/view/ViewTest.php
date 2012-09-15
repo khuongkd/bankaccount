@@ -18,7 +18,5 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $view = $this->getMockBuilder('bankaccount\framework\view\View')
                      ->setConstructorArgs(array($response, $factory))
                      ->getMockForAbstractClass();
-
-        $this->assertTrue(TRUE);
     }
 }
