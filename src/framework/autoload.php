@@ -9,6 +9,9 @@ spl_autoload_register(
             $classes = array(
                 'bankaccount\\framework\\controller\\controllerinterface' => '/controller/Interface.php',
                 'bankaccount\\framework\\controller\\exception' => '/controller/Exception.php',
+                'bankaccount\\framework\\exception\\exception' => '/exception/Interface.php',
+                'bankaccount\\framework\\exception\\outofboundsexception' => '/exception/OutOfBounds.php',
+                'bankaccount\\framework\\exception\\runtimeexception' => '/exception/Runtime.php',
                 'bankaccount\\framework\\factory\\exception' => '/factory/Exception.php',
                 'bankaccount\\framework\\factory\\factory' => '/factory/Factory.php',
                 'bankaccount\\framework\\factory\\factoryinterface' => '/factory/Interface.php',

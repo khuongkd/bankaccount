@@ -1,6 +1,8 @@
 <?php
 namespace bankaccount\framework\factory;
 
-class Exception extends \RuntimeException
+use bankaccount\framework\exception\RuntimeException;
+
+class Exception extends RuntimeException
 {
 }

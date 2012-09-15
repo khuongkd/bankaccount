@@ -1,6 +1,8 @@
 <?php
 namespace bankaccount\framework\mapper;
 
+use bankaccount\framework\exception\OutOfBoundsException;
+
 class IdentityMap
 {
     protected $idToObject = array();
@@ -25,7 +27,7 @@ class IdentityMap
     public function getId($object)
     {
         if (!$this->hasObject($object)) {
-            throw new \OutOfBoundsException;
+            throw new OutOfBoundsException;
         }
 
         return $this->objectToId[$object];
@@ -39,7 +41,7 @@ class IdentityMap
     public function getObject($id)
     {
         if (!$this->hasId($id)) {
-            throw new \OutOfBoundsException;
+            throw new OutOfBoundsException;
         }
 
         return $this->idToObject[$id];
