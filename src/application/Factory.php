@@ -30,6 +30,11 @@ class Factory extends framework\factory\Factory
                 );
             }
             break;
+
+            case 'RedirectToBankaccountList': {
+                return new \bankaccount\controller\RedirectToBankaccountList;
+            }
+            break;
         }
 
         return $this->factory->getController($name);

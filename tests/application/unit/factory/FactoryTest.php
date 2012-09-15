@@ -43,6 +43,17 @@ class ApplicationFactoryTest extends PHPUnit_Framework_TestCase
     /**
      * @covers bankaccount\Factory::getController
      */
+    public function testRedirectToBankaccountListControllerCanBeConstructed()
+    {
+        $this->assertInstanceOf(
+          'bankaccount\controller\RedirectToBankaccountList',
+          $this->factory->getController('RedirectToBankaccountList')
+        );
+    }
+
+    /**
+     * @covers bankaccount\Factory::getController
+     */
     public function testBankAccountControllerCanBeConstructed()
     {
         $this->assertInstanceOf(

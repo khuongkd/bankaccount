@@ -25,6 +25,8 @@ class Application
         $this->router->set('bankaccount',  'BankAccount');
         $this->router->set('bankaccounts', 'BankAccountList');
 
+        $this->router->setDefault('RedirectToBankaccountList');
+
         $this->frontController = new FrontController(
           $this->request,
           $this->router,

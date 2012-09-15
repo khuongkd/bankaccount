@@ -30,6 +30,21 @@ class RouterTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers bankaccount\framework\router\Router::route
+     * @covers bankaccount\framework\router\Router::setDefault
+     */
+    public function testDefaultControllerIsSelected()
+    {
+        $this->router->setDefault('DefaultController');
+
+        $request = new Request('/is/not/configured');
+
+        $this->assertEquals(
+          'DefaultController', $this->router->route($request)
+        );
+    }
+
+    /**
      * @covers            bankaccount\framework\router\Router::route
      * @covers            bankaccount\framework\router\Exception
      * @expectedException bankaccount\framework\router\Exception

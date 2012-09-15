@@ -8,6 +8,8 @@ class Router
 {
     use HashMap;
 
+    private $defaultController;
+
     public function route(Request $request)
     {
         $parts = explode('/', $request->getURI());
@@ -16,7 +18,11 @@ class Router
         $controller = array_shift($parts);
 
         if (!isset($this->values[$controller])) {
-            throw new Exception;
+            if ($this->defaultController === NULL) {
+                throw new Exception;
+            }
+
+            return $this->defaultController;
         }
 
         if (count($parts) % 2 != 0) {
@@ -31,5 +37,10 @@ class Router
         }
 
         return $this->values[$controller];
+    }
+
+    public function setDefault($defaultController)
+    {
+        $this->defaultController = $defaultController;
     }
 }

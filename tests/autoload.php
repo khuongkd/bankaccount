@@ -20,6 +20,7 @@ spl_autoload_register(
                 'frontcontrollertest' => '/framework/frontcontroller/FrontControllerTest.php',
                 'hashmaptest' => '/framework/HashMapTest.php',
                 'identitymaptest' => '/framework/mapper/IdentityMapTest.php',
+                'redirecttobankaccountlisttest' => '/application/unit/controller/RedirectToBankaccountListTest.php',
                 'requesttest' => '/framework/http/RequestTest.php',
                 'resulttest' => '/framework/view/ResultTest.php',
                 'routertest' => '/framework/router/RouterTest.php',
