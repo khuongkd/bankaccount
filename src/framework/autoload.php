@@ -24,6 +24,7 @@ spl_autoload_register(
                 'bankaccount\\framework\\router\\exception' => '/router/Exception.php',
                 'bankaccount\\framework\\router\\router' => '/router/Router.php',
                 'bankaccount\\framework\\testing\\result' => '/testing/Result.php',
+                'bankaccount\\framework\\testing\\viewtestcase' => '/testing/ViewTestCase.php',
                 'bankaccount\\framework\\view\\redirect' => '/view/Redirect.php',
                 'bankaccount\\framework\\view\\result' => '/view/Result.php',
                 'bankaccount\\framework\\view\\view' => '/view/View.php'

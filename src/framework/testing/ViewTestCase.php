@@ -1,5 +1,7 @@
 <?php
-abstract class ViewTestCase extends PHPUnit_Framework_TestCase
+namespace bankaccount\framework\testing;
+
+abstract class ViewTestCase extends \PHPUnit_Framework_TestCase
 {
     protected $response;
 

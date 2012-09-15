@@ -28,7 +28,6 @@ spl_autoload_register(
                 'testmapper' => '/framework/_fixture/TestMapper.php',
                 'testview' => '/framework/_fixture/TestView.php',
                 'viewtest' => '/framework/view/ViewTest.php',
-                'viewtestcase' => '/application/unit/view/ViewTestCase.php',
                 'webtest' => '/application/end-to-end/WebTest.php'
             );
         }

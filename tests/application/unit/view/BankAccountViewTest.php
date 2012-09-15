@@ -1,6 +1,7 @@
 <?php
 use bankaccount\view\BankAccount;
 use bankaccount\testing\Factory;
+use bankaccount\framework\testing\ViewTestCase;
 
 /**
  * @small
